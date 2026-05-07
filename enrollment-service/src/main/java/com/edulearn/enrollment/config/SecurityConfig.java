@@ -22,12 +22,13 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.csrf(AbstractHttpConfigurer::disable)
             .sessionManagement(sm -> sm.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-            .authorizeHttpRequests(auth -> auth
-                .requestMatchers("/api/v1/enrollments/internal/**").permitAll()
-                .requestMatchers("/swagger-ui/**","/api-docs/**","/actuator/**").permitAll()
-                .requestMatchers(HttpMethod.GET, "/api/v1/enrollments/course/*/count").permitAll()
-                .anyRequest().authenticated()
-            )
+                .authorizeHttpRequests(auth -> auth
+                        .requestMatchers("/api/v1/enrollments/internal/**").permitAll()
+                        .requestMatchers("/swagger-ui/**","/api-docs/**","/actuator/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/v1/enrollments/course/*/count").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/v1/enrollments/check").permitAll()  // ← ADD THIS
+                        .anyRequest().authenticated()
+                )
             .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }

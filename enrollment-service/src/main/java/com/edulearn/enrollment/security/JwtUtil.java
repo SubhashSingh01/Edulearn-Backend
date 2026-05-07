@@ -12,6 +12,8 @@ import java.util.*;
 @Component @Slf4j
 public class JwtUtil {
     @Value("${app.jwt.secret}") private String jwtSecret;
+    @Value("${app.jwt.expiration-ms}")
+    private long jwtExpirationMs;
 
     private Key getSigningKey() {
         return Keys.hmacShaKeyFor(Base64.getDecoder().decode(jwtSecret));
@@ -34,7 +36,7 @@ public class JwtUtil {
         return Jwts.builder()
             .setClaims(Map.of("userId", userId, "role", role))
             .setSubject(email).setIssuedAt(new Date())
-            .setExpiration(new Date(System.currentTimeMillis() + 3600000L))
+            .setExpiration(new Date(System.currentTimeMillis() + jwtExpirationMs))
             .signWith(getSigningKey(), SignatureAlgorithm.HS256).compact();
     }
 
