@@ -11,6 +11,7 @@ import java.util.Base64;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import io.jsonwebtoken.security.SignatureException;
 
 /**
  * Handles JWT generation, parsing and validation.
@@ -97,7 +98,10 @@ public class JwtUtil {
             log.warn("JWT unsupported: {}", e.getMessage());
         } catch (MalformedJwtException e) {
             log.warn("JWT malformed: {}", e.getMessage());
-        } catch (IllegalArgumentException e) {
+        } catch (SignatureException e) {          // ← ADD THIS
+            log.warn("JWT signature invalid: {}", e.getMessage());
+        }
+        catch (IllegalArgumentException e) {
             log.warn("JWT illegal argument: {}", e.getMessage());
         }
         return false;

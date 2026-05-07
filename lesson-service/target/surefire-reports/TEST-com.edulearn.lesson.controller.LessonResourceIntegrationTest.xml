@@ -1,0 +1,778 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="com.edulearn.lesson.controller.LessonResourceIntegrationTest" time="14.068" tests="13" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="21"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="Cp1252"/>
+    <property name="java.class.path" value="D:\Project\Edulearn-Backend\lesson-service\target\test-classes;D:\Project\Edulearn-Backend\lesson-service\target\classes;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.2.5\spring-boot-starter-web-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter\3.2.5\spring-boot-starter-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot\3.2.5\spring-boot-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.2.5\spring-boot-autoconfigure-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.2.5\spring-boot-starter-logging-3.2.5.jar;C:\Users\sobby\.m2\repository\ch\qos\logback\logback-classic\1.4.14\logback-classic-1.4.14.jar;C:\Users\sobby\.m2\repository\ch\qos\logback\logback-core\1.4.14\logback-core-1.4.14.jar;C:\Users\sobby\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.21.1\log4j-to-slf4j-2.21.1.jar;C:\Users\sobby\.m2\repository\org\apache\logging\log4j\log4j-api\2.21.1\log4j-api-2.21.1.jar;C:\Users\sobby\.m2\repository\org\slf4j\jul-to-slf4j\2.0.13\jul-to-slf4j-2.0.13.jar;C:\Users\sobby\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\sobby\.m2\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.2.5\spring-boot-starter-json-3.2.5.jar;C:\Users\sobby\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.4\jackson-datatype-jdk8-2.15.4.jar;C:\Users\sobby\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.4\jackson-datatype-jsr310-2.15.4.jar;C:\Users\sobby\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.4\jackson-module-parameter-names-2.15.4.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.2.5\spring-boot-starter-tomcat-3.2.5.jar;C:\Users\sobby\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.20\tomcat-embed-core-10.1.20.jar;C:\Users\sobby\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.20\tomcat-embed-websocket-10.1.20.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-web\6.1.6\spring-web-6.1.6.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-beans\6.1.6\spring-beans-6.1.6.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-webmvc\6.1.6\spring-webmvc-6.1.6.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-context\6.1.6\spring-context-6.1.6.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-expression\6.1.6\spring-expression-6.1.6.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.2.5\spring-boot-starter-data-jpa-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.2.5\spring-boot-starter-aop-3.2.5.jar;C:\Users\sobby\.m2\repository\org\aspectj\aspectjweaver\1.9.22\aspectjweaver-1.9.22.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.2.5\spring-boot-starter-jdbc-3.2.5.jar;C:\Users\sobby\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-jdbc\6.1.6\spring-jdbc-6.1.6.jar;C:\Users\sobby\.m2\repository\org\hibernate\orm\hibernate-core\6.4.4.Final\hibernate-core-6.4.4.Final.jar;C:\Users\sobby\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\sobby\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\sobby\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\sobby\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\sobby\.m2\repository\io\smallrye\jandex\3.1.2\jandex-3.1.2.jar;C:\Users\sobby\.m2\repository\com\fasterxml\classmate\1.6.0\classmate-1.6.0.jar;C:\Users\sobby\.m2\repository\net\bytebuddy\byte-buddy\1.14.13\byte-buddy-1.14.13.jar;C:\Users\sobby\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.5\jaxb-runtime-4.0.5.jar;C:\Users\sobby\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.5\jaxb-core-4.0.5.jar;C:\Users\sobby\.m2\repository\org\eclipse\angus\angus-activation\2.0.2\angus-activation-2.0.2.jar;C:\Users\sobby\.m2\repository\org\glassfish\jaxb\txw2\4.0.5\txw2-4.0.5.jar;C:\Users\sobby\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\sobby\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\sobby\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\sobby\.m2\repository\org\springframework\data\spring-data-jpa\3.2.5\spring-data-jpa-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\data\spring-data-commons\3.2.5\spring-data-commons-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-orm\6.1.6\spring-orm-6.1.6.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-tx\6.1.6\spring-tx-6.1.6.jar;C:\Users\sobby\.m2\repository\org\slf4j\slf4j-api\2.0.13\slf4j-api-2.0.13.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-aspects\6.1.6\spring-aspects-6.1.6.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.2.5\spring-boot-starter-security-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-aop\6.1.6\spring-aop-6.1.6.jar;C:\Users\sobby\.m2\repository\org\springframework\security\spring-security-config\6.2.4\spring-security-config-6.2.4.jar;C:\Users\sobby\.m2\repository\org\springframework\security\spring-security-web\6.2.4\spring-security-web-6.2.4.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.2.5\spring-boot-starter-validation-3.2.5.jar;C:\Users\sobby\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.20\tomcat-embed-el-10.1.20.jar;C:\Users\sobby\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\sobby\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter-actuator\3.2.5\spring-boot-starter-actuator-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-actuator-autoconfigure\3.2.5\spring-boot-actuator-autoconfigure-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-actuator\3.2.5\spring-boot-actuator-3.2.5.jar;C:\Users\sobby\.m2\repository\io\micrometer\micrometer-observation\1.12.5\micrometer-observation-1.12.5.jar;C:\Users\sobby\.m2\repository\io\micrometer\micrometer-commons\1.12.5\micrometer-commons-1.12.5.jar;C:\Users\sobby\.m2\repository\io\micrometer\micrometer-jakarta9\1.12.5\micrometer-jakarta9-1.12.5.jar;C:\Users\sobby\.m2\repository\io\micrometer\micrometer-core\1.12.5\micrometer-core-1.12.5.jar;C:\Users\sobby\.m2\repository\org\hdrhistogram\HdrHistogram\2.1.12\HdrHistogram-2.1.12.jar;C:\Users\sobby\.m2\repository\org\latencyutils\LatencyUtils\2.0.3\LatencyUtils-2.0.3.jar;C:\Users\sobby\.m2\repository\com\mysql\mysql-connector-j\8.3.0\mysql-connector-j-8.3.0.jar;C:\Users\sobby\.m2\repository\com\h2database\h2\2.2.224\h2-2.2.224.jar;C:\Users\sobby\.m2\repository\io\jsonwebtoken\jjwt-api\0.11.5\jjwt-api-0.11.5.jar;C:\Users\sobby\.m2\repository\io\jsonwebtoken\jjwt-impl\0.11.5\jjwt-impl-0.11.5.jar;C:\Users\sobby\.m2\repository\io\jsonwebtoken\jjwt-jackson\0.11.5\jjwt-jackson-0.11.5.jar;C:\Users\sobby\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.4\jackson-databind-2.15.4.jar;C:\Users\sobby\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.4\jackson-annotations-2.15.4.jar;C:\Users\sobby\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.4\jackson-core-2.15.4.jar;C:\Users\sobby\.m2\repository\org\projectlombok\lombok\1.18.32\lombok-1.18.32.jar;C:\Users\sobby\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-ui\2.5.0\springdoc-openapi-starter-webmvc-ui-2.5.0.jar;C:\Users\sobby\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-api\2.5.0\springdoc-openapi-starter-webmvc-api-2.5.0.jar;C:\Users\sobby\.m2\repository\org\springdoc\springdoc-openapi-starter-common\2.5.0\springdoc-openapi-starter-common-2.5.0.jar;C:\Users\sobby\.m2\repository\io\swagger\core\v3\swagger-core-jakarta\2.2.21\swagger-core-jakarta-2.2.21.jar;C:\Users\sobby\.m2\repository\org\apache\commons\commons-lang3\3.13.0\commons-lang3-3.13.0.jar;C:\Users\sobby\.m2\repository\io\swagger\core\v3\swagger-annotations-jakarta\2.2.21\swagger-annotations-jakarta-2.2.21.jar;C:\Users\sobby\.m2\repository\io\swagger\core\v3\swagger-models-jakarta\2.2.21\swagger-models-jakarta-2.2.21.jar;C:\Users\sobby\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.15.4\jackson-dataformat-yaml-2.15.4.jar;C:\Users\sobby\.m2\repository\org\webjars\swagger-ui\5.13.0\swagger-ui-5.13.0.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.2.5\spring-boot-starter-test-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-test\3.2.5\spring-boot-test-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.2.5\spring-boot-test-autoconfigure-3.2.5.jar;C:\Users\sobby\.m2\repository\com\jayway\jsonpath\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\sobby\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\sobby\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar;C:\Users\sobby\.m2\repository\net\minidev\json-smart\2.5.1\json-smart-2.5.1.jar;C:\Users\sobby\.m2\repository\net\minidev\accessors-smart\2.5.1\accessors-smart-2.5.1.jar;C:\Users\sobby\.m2\repository\org\ow2\asm\asm\9.6\asm-9.6.jar;C:\Users\sobby\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\sobby\.m2\repository\org\awaitility\awaitility\4.2.1\awaitility-4.2.1.jar;C:\Users\sobby\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\sobby\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.2\junit-jupiter-5.10.2.jar;C:\Users\sobby\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\sobby\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\sobby\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\sobby\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\sobby\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\sobby\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\sobby\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\sobby\.m2\repository\org\mockito\mockito-core\5.7.0\mockito-core-5.7.0.jar;C:\Users\sobby\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.13\byte-buddy-agent-1.14.13.jar;C:\Users\sobby\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\sobby\.m2\repository\org\mockito\mockito-junit-jupiter\5.7.0\mockito-junit-jupiter-5.7.0.jar;C:\Users\sobby\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\sobby\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-core\6.1.6\spring-core-6.1.6.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-jcl\6.1.6\spring-jcl-6.1.6.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-test\6.1.6\spring-test-6.1.6.jar;C:\Users\sobby\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;C:\Users\sobby\.m2\repository\org\springframework\security\spring-security-test\6.2.4\spring-security-test-6.2.4.jar;C:\Users\sobby\.m2\repository\org\springframework\security\spring-security-core\6.2.4\spring-security-core-6.2.4.jar;C:\Users\sobby\.m2\repository\org\springframework\security\spring-security-crypto\6.2.4\spring-security-crypto-6.2.4.jar;"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="org.jboss.logging.provider" value="slf4j"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="21"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="IN"/>
+    <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
+    <property name="sun.java.command" value="C:\Users\sobby\AppData\Local\Temp\surefire12216809733485744411\surefirebooter-20260507131349412_3.jar C:\Users\sobby\AppData\Local\Temp\surefire12216809733485744411 2026-05-07T13-13-49_209-jvmRun1 surefire-20260507131349412_1tmp surefire_0-20260507131349412_2tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="D:\Project\Edulearn-Backend\lesson-service\target\test-classes;D:\Project\Edulearn-Backend\lesson-service\target\classes;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter-web\3.2.5\spring-boot-starter-web-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter\3.2.5\spring-boot-starter-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot\3.2.5\spring-boot-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-autoconfigure\3.2.5\spring-boot-autoconfigure-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter-logging\3.2.5\spring-boot-starter-logging-3.2.5.jar;C:\Users\sobby\.m2\repository\ch\qos\logback\logback-classic\1.4.14\logback-classic-1.4.14.jar;C:\Users\sobby\.m2\repository\ch\qos\logback\logback-core\1.4.14\logback-core-1.4.14.jar;C:\Users\sobby\.m2\repository\org\apache\logging\log4j\log4j-to-slf4j\2.21.1\log4j-to-slf4j-2.21.1.jar;C:\Users\sobby\.m2\repository\org\apache\logging\log4j\log4j-api\2.21.1\log4j-api-2.21.1.jar;C:\Users\sobby\.m2\repository\org\slf4j\jul-to-slf4j\2.0.13\jul-to-slf4j-2.0.13.jar;C:\Users\sobby\.m2\repository\jakarta\annotation\jakarta.annotation-api\2.1.1\jakarta.annotation-api-2.1.1.jar;C:\Users\sobby\.m2\repository\org\yaml\snakeyaml\2.2\snakeyaml-2.2.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter-json\3.2.5\spring-boot-starter-json-3.2.5.jar;C:\Users\sobby\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jdk8\2.15.4\jackson-datatype-jdk8-2.15.4.jar;C:\Users\sobby\.m2\repository\com\fasterxml\jackson\datatype\jackson-datatype-jsr310\2.15.4\jackson-datatype-jsr310-2.15.4.jar;C:\Users\sobby\.m2\repository\com\fasterxml\jackson\module\jackson-module-parameter-names\2.15.4\jackson-module-parameter-names-2.15.4.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter-tomcat\3.2.5\spring-boot-starter-tomcat-3.2.5.jar;C:\Users\sobby\.m2\repository\org\apache\tomcat\embed\tomcat-embed-core\10.1.20\tomcat-embed-core-10.1.20.jar;C:\Users\sobby\.m2\repository\org\apache\tomcat\embed\tomcat-embed-websocket\10.1.20\tomcat-embed-websocket-10.1.20.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-web\6.1.6\spring-web-6.1.6.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-beans\6.1.6\spring-beans-6.1.6.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-webmvc\6.1.6\spring-webmvc-6.1.6.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-context\6.1.6\spring-context-6.1.6.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-expression\6.1.6\spring-expression-6.1.6.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter-data-jpa\3.2.5\spring-boot-starter-data-jpa-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter-aop\3.2.5\spring-boot-starter-aop-3.2.5.jar;C:\Users\sobby\.m2\repository\org\aspectj\aspectjweaver\1.9.22\aspectjweaver-1.9.22.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter-jdbc\3.2.5\spring-boot-starter-jdbc-3.2.5.jar;C:\Users\sobby\.m2\repository\com\zaxxer\HikariCP\5.0.1\HikariCP-5.0.1.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-jdbc\6.1.6\spring-jdbc-6.1.6.jar;C:\Users\sobby\.m2\repository\org\hibernate\orm\hibernate-core\6.4.4.Final\hibernate-core-6.4.4.Final.jar;C:\Users\sobby\.m2\repository\jakarta\persistence\jakarta.persistence-api\3.1.0\jakarta.persistence-api-3.1.0.jar;C:\Users\sobby\.m2\repository\jakarta\transaction\jakarta.transaction-api\2.0.1\jakarta.transaction-api-2.0.1.jar;C:\Users\sobby\.m2\repository\org\jboss\logging\jboss-logging\3.5.3.Final\jboss-logging-3.5.3.Final.jar;C:\Users\sobby\.m2\repository\org\hibernate\common\hibernate-commons-annotations\6.0.6.Final\hibernate-commons-annotations-6.0.6.Final.jar;C:\Users\sobby\.m2\repository\io\smallrye\jandex\3.1.2\jandex-3.1.2.jar;C:\Users\sobby\.m2\repository\com\fasterxml\classmate\1.6.0\classmate-1.6.0.jar;C:\Users\sobby\.m2\repository\net\bytebuddy\byte-buddy\1.14.13\byte-buddy-1.14.13.jar;C:\Users\sobby\.m2\repository\org\glassfish\jaxb\jaxb-runtime\4.0.5\jaxb-runtime-4.0.5.jar;C:\Users\sobby\.m2\repository\org\glassfish\jaxb\jaxb-core\4.0.5\jaxb-core-4.0.5.jar;C:\Users\sobby\.m2\repository\org\eclipse\angus\angus-activation\2.0.2\angus-activation-2.0.2.jar;C:\Users\sobby\.m2\repository\org\glassfish\jaxb\txw2\4.0.5\txw2-4.0.5.jar;C:\Users\sobby\.m2\repository\com\sun\istack\istack-commons-runtime\4.1.2\istack-commons-runtime-4.1.2.jar;C:\Users\sobby\.m2\repository\jakarta\inject\jakarta.inject-api\2.0.1\jakarta.inject-api-2.0.1.jar;C:\Users\sobby\.m2\repository\org\antlr\antlr4-runtime\4.13.0\antlr4-runtime-4.13.0.jar;C:\Users\sobby\.m2\repository\org\springframework\data\spring-data-jpa\3.2.5\spring-data-jpa-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\data\spring-data-commons\3.2.5\spring-data-commons-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-orm\6.1.6\spring-orm-6.1.6.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-tx\6.1.6\spring-tx-6.1.6.jar;C:\Users\sobby\.m2\repository\org\slf4j\slf4j-api\2.0.13\slf4j-api-2.0.13.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-aspects\6.1.6\spring-aspects-6.1.6.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter-security\3.2.5\spring-boot-starter-security-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-aop\6.1.6\spring-aop-6.1.6.jar;C:\Users\sobby\.m2\repository\org\springframework\security\spring-security-config\6.2.4\spring-security-config-6.2.4.jar;C:\Users\sobby\.m2\repository\org\springframework\security\spring-security-web\6.2.4\spring-security-web-6.2.4.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter-validation\3.2.5\spring-boot-starter-validation-3.2.5.jar;C:\Users\sobby\.m2\repository\org\apache\tomcat\embed\tomcat-embed-el\10.1.20\tomcat-embed-el-10.1.20.jar;C:\Users\sobby\.m2\repository\org\hibernate\validator\hibernate-validator\8.0.1.Final\hibernate-validator-8.0.1.Final.jar;C:\Users\sobby\.m2\repository\jakarta\validation\jakarta.validation-api\3.0.2\jakarta.validation-api-3.0.2.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter-actuator\3.2.5\spring-boot-starter-actuator-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-actuator-autoconfigure\3.2.5\spring-boot-actuator-autoconfigure-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-actuator\3.2.5\spring-boot-actuator-3.2.5.jar;C:\Users\sobby\.m2\repository\io\micrometer\micrometer-observation\1.12.5\micrometer-observation-1.12.5.jar;C:\Users\sobby\.m2\repository\io\micrometer\micrometer-commons\1.12.5\micrometer-commons-1.12.5.jar;C:\Users\sobby\.m2\repository\io\micrometer\micrometer-jakarta9\1.12.5\micrometer-jakarta9-1.12.5.jar;C:\Users\sobby\.m2\repository\io\micrometer\micrometer-core\1.12.5\micrometer-core-1.12.5.jar;C:\Users\sobby\.m2\repository\org\hdrhistogram\HdrHistogram\2.1.12\HdrHistogram-2.1.12.jar;C:\Users\sobby\.m2\repository\org\latencyutils\LatencyUtils\2.0.3\LatencyUtils-2.0.3.jar;C:\Users\sobby\.m2\repository\com\mysql\mysql-connector-j\8.3.0\mysql-connector-j-8.3.0.jar;C:\Users\sobby\.m2\repository\com\h2database\h2\2.2.224\h2-2.2.224.jar;C:\Users\sobby\.m2\repository\io\jsonwebtoken\jjwt-api\0.11.5\jjwt-api-0.11.5.jar;C:\Users\sobby\.m2\repository\io\jsonwebtoken\jjwt-impl\0.11.5\jjwt-impl-0.11.5.jar;C:\Users\sobby\.m2\repository\io\jsonwebtoken\jjwt-jackson\0.11.5\jjwt-jackson-0.11.5.jar;C:\Users\sobby\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.15.4\jackson-databind-2.15.4.jar;C:\Users\sobby\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.15.4\jackson-annotations-2.15.4.jar;C:\Users\sobby\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.15.4\jackson-core-2.15.4.jar;C:\Users\sobby\.m2\repository\org\projectlombok\lombok\1.18.32\lombok-1.18.32.jar;C:\Users\sobby\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-ui\2.5.0\springdoc-openapi-starter-webmvc-ui-2.5.0.jar;C:\Users\sobby\.m2\repository\org\springdoc\springdoc-openapi-starter-webmvc-api\2.5.0\springdoc-openapi-starter-webmvc-api-2.5.0.jar;C:\Users\sobby\.m2\repository\org\springdoc\springdoc-openapi-starter-common\2.5.0\springdoc-openapi-starter-common-2.5.0.jar;C:\Users\sobby\.m2\repository\io\swagger\core\v3\swagger-core-jakarta\2.2.21\swagger-core-jakarta-2.2.21.jar;C:\Users\sobby\.m2\repository\org\apache\commons\commons-lang3\3.13.0\commons-lang3-3.13.0.jar;C:\Users\sobby\.m2\repository\io\swagger\core\v3\swagger-annotations-jakarta\2.2.21\swagger-annotations-jakarta-2.2.21.jar;C:\Users\sobby\.m2\repository\io\swagger\core\v3\swagger-models-jakarta\2.2.21\swagger-models-jakarta-2.2.21.jar;C:\Users\sobby\.m2\repository\com\fasterxml\jackson\dataformat\jackson-dataformat-yaml\2.15.4\jackson-dataformat-yaml-2.15.4.jar;C:\Users\sobby\.m2\repository\org\webjars\swagger-ui\5.13.0\swagger-ui-5.13.0.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-starter-test\3.2.5\spring-boot-starter-test-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-test\3.2.5\spring-boot-test-3.2.5.jar;C:\Users\sobby\.m2\repository\org\springframework\boot\spring-boot-test-autoconfigure\3.2.5\spring-boot-test-autoconfigure-3.2.5.jar;C:\Users\sobby\.m2\repository\com\jayway\jsonpath\json-path\2.9.0\json-path-2.9.0.jar;C:\Users\sobby\.m2\repository\jakarta\xml\bind\jakarta.xml.bind-api\4.0.2\jakarta.xml.bind-api-4.0.2.jar;C:\Users\sobby\.m2\repository\jakarta\activation\jakarta.activation-api\2.1.3\jakarta.activation-api-2.1.3.jar;C:\Users\sobby\.m2\repository\net\minidev\json-smart\2.5.1\json-smart-2.5.1.jar;C:\Users\sobby\.m2\repository\net\minidev\accessors-smart\2.5.1\accessors-smart-2.5.1.jar;C:\Users\sobby\.m2\repository\org\ow2\asm\asm\9.6\asm-9.6.jar;C:\Users\sobby\.m2\repository\org\assertj\assertj-core\3.24.2\assertj-core-3.24.2.jar;C:\Users\sobby\.m2\repository\org\awaitility\awaitility\4.2.1\awaitility-4.2.1.jar;C:\Users\sobby\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\sobby\.m2\repository\org\junit\jupiter\junit-jupiter\5.10.2\junit-jupiter-5.10.2.jar;C:\Users\sobby\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\sobby\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\sobby\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\sobby\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\sobby\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.2\junit-jupiter-params-5.10.2.jar;C:\Users\sobby\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\sobby\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\sobby\.m2\repository\org\mockito\mockito-core\5.7.0\mockito-core-5.7.0.jar;C:\Users\sobby\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.13\byte-buddy-agent-1.14.13.jar;C:\Users\sobby\.m2\repository\org\objenesis\objenesis\3.3\objenesis-3.3.jar;C:\Users\sobby\.m2\repository\org\mockito\mockito-junit-jupiter\5.7.0\mockito-junit-jupiter-5.7.0.jar;C:\Users\sobby\.m2\repository\org\skyscreamer\jsonassert\1.5.1\jsonassert-1.5.1.jar;C:\Users\sobby\.m2\repository\com\vaadin\external\google\android-json\0.0.20131108.vaadin1\android-json-0.0.20131108.vaadin1.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-core\6.1.6\spring-core-6.1.6.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-jcl\6.1.6\spring-jcl-6.1.6.jar;C:\Users\sobby\.m2\repository\org\springframework\spring-test\6.1.6\spring-test-6.1.6.jar;C:\Users\sobby\.m2\repository\org\xmlunit\xmlunit-core\2.9.1\xmlunit-core-2.9.1.jar;C:\Users\sobby\.m2\repository\org\springframework\security\spring-security-test\6.2.4\spring-security-test-6.2.4.jar;C:\Users\sobby\.m2\repository\org\springframework\security\spring-security-core\6.2.4\spring-security-core-6.2.4.jar;C:\Users\sobby\.m2\repository\org\springframework\security\spring-security-crypto\6.2.4\spring-security-crypto-6.2.4.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\sobby"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-01-16"/>
+    <property name="java.home" value="C:\Program Files\Java\jdk-21"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="D:\Project\Edulearn-Backend\lesson-service"/>
+    <property name="java.vm.compressedOopsMode" value="32-bit"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="FILE_LOG_CHARSET" value="UTF-8"/>
+    <property name="java.awt.headless" value="true"/>
+    <property name="surefire.real.class.path" value="C:\Users\sobby\AppData\Local\Temp\surefire12216809733485744411\surefirebooter-20260507131349412_3.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="21.0.2+13-LTS-58"/>
+    <property name="user.name" value="sobby"/>
+    <property name="stdout.encoding" value="Cp1252"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="localRepository" value="C:\Users\sobby\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="C:\Users\sobby\AppData\Local\Temp\"/>
+    <property name="com.zaxxer.hikari.pool_number" value="1"/>
+    <property name="java.version" value="21.0.2"/>
+    <property name="user.dir" value="D:\Project\Edulearn-Backend\lesson-service"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="PID" value="4044"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="CONSOLE_LOG_CHARSET" value="UTF-8"/>
+    <property name="native.encoding" value="Cp1252"/>
+    <property name="java.library.path" value="C:\Program Files\Java\jdk-21\bin;C:\WINDOWS\Sun\Java\bin;C:\WINDOWS\system32;C:\WINDOWS;C:\Python314\Scripts\;C:\Python314\;C:\Program Files\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files\Git\cmd;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Users\sobby\Downloads\apache-maven-3.9.12-bin\apache-maven-3.9.12\bin;C:\Program Files\nodejs\;C:\ProgramData\chocolatey\bin;C:\Program Files\MySQL\MySQL Shell 8.0\bin\;C:\Users\sobby\AppData\Local\Microsoft\WindowsApps;C:\Users\sobby\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\sobby\AppData\Local\GitHubDesktop\bin;C:\Users\sobby\AppData\Roaming\npm;C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2023.3.4\bin;;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="stderr.encoding" value="Cp1252"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.version" value="21.0.2+13-LTS-58"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="65.0"/>
+    <property name="LOGGED_APPLICATION_NAME" value="[lesson-service] "/>
+  </properties>
+  <testcase name="addLesson_instructorSuccess" classname="com.edulearn.lesson.controller.LessonResourceIntegrationTest" time="0.908">
+    <system-out><![CDATA[13:13:50.693 [main] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.edulearn.lesson.controller.LessonResourceIntegrationTest]: LessonResourceIntegrationTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+13:13:50.954 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.edulearn.lesson.LessonServiceApplication for test class com.edulearn.lesson.controller.LessonResourceIntegrationTest
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::                (v3.2.5)
+
+2026-05-07T13:13:51.523+05:30  INFO 4044 --- [lesson-service] [           main] c.e.l.c.LessonResourceIntegrationTest    : Starting LessonResourceIntegrationTest using Java 21.0.2 with PID 4044 (started by sobby in D:\Project\Edulearn-Backend\lesson-service)
+2026-05-07T13:13:51.524+05:30 DEBUG 4044 --- [lesson-service] [           main] c.e.l.c.LessonResourceIntegrationTest    : Running with Spring Boot v3.2.5, Spring v6.1.6
+2026-05-07T13:13:51.524+05:30  INFO 4044 --- [lesson-service] [           main] c.e.l.c.LessonResourceIntegrationTest    : The following 1 profile is active: "test"
+2026-05-07T13:13:53.259+05:30  INFO 4044 --- [lesson-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-05-07T13:13:53.345+05:30  INFO 4044 --- [lesson-service] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77 ms. Found 2 JPA repository interfaces.
+2026-05-07T13:13:56.254+05:30  INFO 4044 --- [lesson-service] [           main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2026-05-07T13:13:56.378+05:30  INFO 4044 --- [lesson-service] [           main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.4.4.Final
+2026-05-07T13:13:56.449+05:30  INFO 4044 --- [lesson-service] [           main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2026-05-07T13:13:56.666+05:30  INFO 4044 --- [lesson-service] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-05-07T13:13:56.713+05:30  INFO 4044 --- [lesson-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-05-07T13:13:57.023+05:30  INFO 4044 --- [lesson-service] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection conn0: url=jdbc:h2:mem:testdb user=SA
+2026-05-07T13:13:57.027+05:30  INFO 4044 --- [lesson-service] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-05-07T13:13:57.068+05:30  WARN 4044 --- [lesson-service] [           main] org.hibernate.orm.deprecation            : HHH90000025: H2Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-05-07T13:13:58.463+05:30  INFO 4044 --- [lesson-service] [           main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+Hibernate: 
+    drop table if exists lessons cascade 
+Hibernate: 
+    drop table if exists resources cascade 
+Hibernate: 
+    create table lessons (
+        duration_minutes integer,
+        is_preview boolean not null,
+        order_index integer not null,
+        course_id bigint not null,
+        created_at timestamp(6),
+        instructor_id bigint,
+        lesson_id bigint generated by default as identity,
+        updated_at timestamp(6),
+        content_type varchar(255) not null check (content_type in ('VIDEO','ARTICLE','PDF')),
+        content_url TEXT,
+        description TEXT,
+        title varchar(255) not null,
+        primary key (lesson_id)
+    )
+Hibernate: 
+    create table resources (
+        created_at timestamp(6),
+        lesson_id bigint not null,
+        resource_id bigint generated by default as identity,
+        size_kb bigint,
+        file_type varchar(255) not null check (file_type in ('PDF','SLIDES','CODE','IMAGE','ZIP','OTHER')),
+        file_url TEXT not null,
+        name varchar(255) not null,
+        primary key (resource_id)
+    )
+Hibernate: 
+    alter table if exists resources 
+       add constraint FK4ckipoe4tccull4lm5q2l09rq 
+       foreign key (lesson_id) 
+       references lessons
+2026-05-07T13:13:58.542+05:30  INFO 4044 --- [lesson-service] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-05-07T13:13:59.275+05:30  INFO 4044 --- [lesson-service] [           main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-05-07T13:14:00.442+05:30  WARN 4044 --- [lesson-service] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-05-07T13:14:00.552+05:30  WARN 4044 --- [lesson-service] [           main] .s.s.UserDetailsServiceAutoConfiguration : 
+
+Using generated security password: 529dbb61-f636-4656-b55f-d67b40eb530f
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-05-07T13:14:01.526+05:30  INFO 4044 --- [lesson-service] [           main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2026-05-07T13:14:01.654+05:30  INFO 4044 --- [lesson-service] [           main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@8ace41e, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@78276d6d, org.springframework.security.web.context.SecurityContextHolderFilter@5c7673b8, org.springframework.security.web.header.HeaderWriterFilter@2c15ced4, org.springframework.web.filter.CorsFilter@18be5bce, org.springframework.security.web.authentication.logout.LogoutFilter@2c6c67e0, com.edulearn.lesson.security.JwtAuthenticationFilter@173c0722, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3e99738e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@618dbfd4, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5b3915b, org.springframework.security.web.session.SessionManagementFilter@5ecc530, org.springframework.security.web.access.ExceptionTranslationFilter@2dbdd3f2, org.springframework.security.web.access.intercept.AuthorizationFilter@2f49d34d]
+2026-05-07T13:14:02.613+05:30  INFO 4044 --- [lesson-service] [           main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2026-05-07T13:14:02.744+05:30 DEBUG 4044 --- [lesson-service] [           main] c.e.l.security.JwtAuthenticationFilter   : Filter 'jwtAuthenticationFilter' configured for use
+2026-05-07T13:14:02.746+05:30  INFO 4044 --- [lesson-service] [           main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2026-05-07T13:14:02.746+05:30  INFO 4044 --- [lesson-service] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2026-05-07T13:14:02.748+05:30  INFO 4044 --- [lesson-service] [           main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2026-05-07T13:14:02.863+05:30  INFO 4044 --- [lesson-service] [           main] c.e.l.c.LessonResourceIntegrationTest    : Started LessonResourceIntegrationTest in 11.702 seconds (process running for 13.272)
+Hibernate: 
+    select
+        l1_0.lesson_id,
+        l1_0.content_type,
+        l1_0.content_url,
+        l1_0.course_id,
+        l1_0.created_at,
+        l1_0.description,
+        l1_0.duration_minutes,
+        l1_0.instructor_id,
+        l1_0.is_preview,
+        l1_0.order_index,
+        l1_0.title,
+        l1_0.updated_at 
+    from
+        lessons l1_0
+2026-05-07T13:14:03.418+05:30 DEBUG 4044 --- [lesson-service] [           main] c.e.l.security.JwtAuthenticationFilter   : JWT authenticated: userId=5 role=INSTRUCTOR
+Hibernate: 
+    select
+        count(l1_0.lesson_id) 
+    from
+        lessons l1_0 
+    where
+        l1_0.course_id=?
+Hibernate: 
+    select
+        coalesce(max(l1_0.order_index), 0) 
+    from
+        lessons l1_0 
+    where
+        l1_0.course_id=?
+Hibernate: 
+    insert 
+    into
+        lessons
+        (content_type, content_url, course_id, created_at, description, duration_minutes, instructor_id, is_preview, order_index, title, updated_at, lesson_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2026-05-07T13:14:03.700+05:30  INFO 4044 --- [lesson-service] [           main] c.e.l.service.impl.LessonServiceImpl     : Lesson added: id=1 courseId=10 order=1
+Hibernate: 
+    select
+        coalesce(sum(l1_0.duration_minutes), 0) 
+    from
+        lessons l1_0 
+    where
+        l1_0.course_id=?
+2026-05-07T13:14:03.748+05:30 DEBUG 4044 --- [lesson-service] [           main] c.e.l.service.impl.LessonServiceImpl     : Notified course-service: courseId=10 totalMinutes=45
+]]></system-out>
+    <system-err><![CDATA[WARNING: A Java agent has been loaded dynamically (C:\Users\sobby\.m2\repository\net\bytebuddy\byte-buddy-agent\1.14.13\byte-buddy-agent-1.14.13.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+]]></system-err>
+  </testcase>
+  <testcase name="addLesson_noAuth" classname="com.edulearn.lesson.controller.LessonResourceIntegrationTest" time="0.019"/>
+  <testcase name="getPreviewLessons_public" classname="com.edulearn.lesson.controller.LessonResourceIntegrationTest" time="0.058">
+    <system-out><![CDATA[Hibernate: 
+    select
+        l1_0.lesson_id,
+        l1_0.content_type,
+        l1_0.content_url,
+        l1_0.course_id,
+        l1_0.created_at,
+        l1_0.description,
+        l1_0.duration_minutes,
+        l1_0.instructor_id,
+        l1_0.is_preview,
+        l1_0.order_index,
+        l1_0.title,
+        l1_0.updated_at 
+    from
+        lessons l1_0 
+    where
+        l1_0.course_id=? 
+        and l1_0.is_preview
+Hibernate: 
+    select
+        count(r1_0.resource_id) 
+    from
+        resources r1_0 
+    left join
+        lessons l1_0 
+            on l1_0.lesson_id=r1_0.lesson_id 
+    where
+        l1_0.lesson_id=?
+]]></system-out>
+  </testcase>
+  <testcase name="getLessonsByCourse_authenticated" classname="com.edulearn.lesson.controller.LessonResourceIntegrationTest" time="0.036">
+    <system-out><![CDATA[2026-05-07T13:14:04.020+05:30 DEBUG 4044 --- [lesson-service] [           main] c.e.l.security.JwtAuthenticationFilter   : JWT authenticated: userId=20 role=STUDENT
+Hibernate: 
+    select
+        l1_0.lesson_id,
+        l1_0.content_type,
+        l1_0.content_url,
+        l1_0.course_id,
+        l1_0.created_at,
+        l1_0.description,
+        l1_0.duration_minutes,
+        l1_0.instructor_id,
+        l1_0.is_preview,
+        l1_0.order_index,
+        l1_0.title,
+        l1_0.updated_at 
+    from
+        lessons l1_0 
+    where
+        l1_0.course_id=? 
+    order by
+        l1_0.order_index
+Hibernate: 
+    select
+        count(r1_0.resource_id) 
+    from
+        resources r1_0 
+    left join
+        lessons l1_0 
+            on l1_0.lesson_id=r1_0.lesson_id 
+    where
+        l1_0.lesson_id=?
+]]></system-out>
+  </testcase>
+  <testcase name="getLessonById_instructor" classname="com.edulearn.lesson.controller.LessonResourceIntegrationTest" time="0.044">
+    <system-out><![CDATA[2026-05-07T13:14:04.055+05:30 DEBUG 4044 --- [lesson-service] [           main] c.e.l.security.JwtAuthenticationFilter   : JWT authenticated: userId=5 role=INSTRUCTOR
+Hibernate: 
+    select
+        l1_0.lesson_id,
+        l1_0.content_type,
+        l1_0.content_url,
+        l1_0.course_id,
+        l1_0.created_at,
+        l1_0.description,
+        l1_0.duration_minutes,
+        l1_0.instructor_id,
+        l1_0.is_preview,
+        l1_0.order_index,
+        l1_0.title,
+        l1_0.updated_at 
+    from
+        lessons l1_0 
+    where
+        l1_0.lesson_id=?
+Hibernate: 
+    select
+        r1_0.lesson_id,
+        r1_0.resource_id,
+        r1_0.created_at,
+        r1_0.file_type,
+        r1_0.file_url,
+        r1_0.name,
+        r1_0.size_kb 
+    from
+        resources r1_0 
+    where
+        r1_0.lesson_id=?
+]]></system-out>
+  </testcase>
+  <testcase name="getSinglePreviewLesson_public" classname="com.edulearn.lesson.controller.LessonResourceIntegrationTest" time="0.019">
+    <system-out><![CDATA[Hibernate: 
+    select
+        l1_0.lesson_id,
+        l1_0.content_type,
+        l1_0.content_url,
+        l1_0.course_id,
+        l1_0.created_at,
+        l1_0.description,
+        l1_0.duration_minutes,
+        l1_0.instructor_id,
+        l1_0.is_preview,
+        l1_0.order_index,
+        l1_0.title,
+        l1_0.updated_at 
+    from
+        lessons l1_0 
+    where
+        l1_0.lesson_id=?
+Hibernate: 
+    select
+        r1_0.lesson_id,
+        r1_0.resource_id,
+        r1_0.created_at,
+        r1_0.file_type,
+        r1_0.file_url,
+        r1_0.name,
+        r1_0.size_kb 
+    from
+        resources r1_0 
+    where
+        r1_0.lesson_id=?
+]]></system-out>
+  </testcase>
+  <testcase name="updateLesson_instructorSuccess" classname="com.edulearn.lesson.controller.LessonResourceIntegrationTest" time="0.079">
+    <system-out><![CDATA[2026-05-07T13:14:04.134+05:30 DEBUG 4044 --- [lesson-service] [           main] c.e.l.security.JwtAuthenticationFilter   : JWT authenticated: userId=5 role=INSTRUCTOR
+Hibernate: 
+    select
+        l1_0.lesson_id,
+        l1_0.content_type,
+        l1_0.content_url,
+        l1_0.course_id,
+        l1_0.created_at,
+        l1_0.description,
+        l1_0.duration_minutes,
+        l1_0.instructor_id,
+        l1_0.is_preview,
+        l1_0.order_index,
+        l1_0.title,
+        l1_0.updated_at 
+    from
+        lessons l1_0 
+    where
+        l1_0.lesson_id=?
+Hibernate: 
+    select
+        count(l1_0.lesson_id) 
+    from
+        lessons l1_0 
+    where
+        l1_0.course_id=?
+Hibernate: 
+    select
+        l1_0.lesson_id 
+    from
+        lessons l1_0 
+    where
+        l1_0.course_id=? 
+        and l1_0.instructor_id=? 
+    fetch
+        first ? rows only
+2026-05-07T13:14:04.158+05:30  INFO 4044 --- [lesson-service] [           main] c.e.l.service.impl.LessonServiceImpl     : Lesson updated: id=1
+Hibernate: 
+    update
+        lessons 
+    set
+        content_type=?,
+        content_url=?,
+        course_id=?,
+        description=?,
+        duration_minutes=?,
+        instructor_id=?,
+        is_preview=?,
+        order_index=?,
+        title=?,
+        updated_at=? 
+    where
+        lesson_id=?
+Hibernate: 
+    select
+        coalesce(sum(l1_0.duration_minutes), 0) 
+    from
+        lessons l1_0 
+    where
+        l1_0.course_id=?
+2026-05-07T13:14:04.181+05:30 DEBUG 4044 --- [lesson-service] [           main] c.e.l.service.impl.LessonServiceImpl     : Notified course-service: courseId=10 totalMinutes=90
+Hibernate: 
+    select
+        r1_0.lesson_id,
+        r1_0.resource_id,
+        r1_0.created_at,
+        r1_0.file_type,
+        r1_0.file_url,
+        r1_0.name,
+        r1_0.size_kb 
+    from
+        resources r1_0 
+    where
+        r1_0.lesson_id=?
+]]></system-out>
+  </testcase>
+  <testcase name="addResource_instructorSuccess" classname="com.edulearn.lesson.controller.LessonResourceIntegrationTest" time="0.064">
+    <system-out><![CDATA[2026-05-07T13:14:04.220+05:30 DEBUG 4044 --- [lesson-service] [           main] c.e.l.security.JwtAuthenticationFilter   : JWT authenticated: userId=5 role=INSTRUCTOR
+Hibernate: 
+    select
+        l1_0.lesson_id,
+        l1_0.content_type,
+        l1_0.content_url,
+        l1_0.course_id,
+        l1_0.created_at,
+        l1_0.description,
+        l1_0.duration_minutes,
+        l1_0.instructor_id,
+        l1_0.is_preview,
+        l1_0.order_index,
+        l1_0.title,
+        l1_0.updated_at 
+    from
+        lessons l1_0 
+    where
+        l1_0.lesson_id=?
+Hibernate: 
+    select
+        count(l1_0.lesson_id) 
+    from
+        lessons l1_0 
+    where
+        l1_0.course_id=?
+Hibernate: 
+    select
+        l1_0.lesson_id 
+    from
+        lessons l1_0 
+    where
+        l1_0.course_id=? 
+        and l1_0.instructor_id=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    insert 
+    into
+        resources
+        (created_at, file_type, file_url, lesson_id, name, size_kb, resource_id) 
+    values
+        (?, ?, ?, ?, ?, ?, default)
+2026-05-07T13:14:04.242+05:30  INFO 4044 --- [lesson-service] [           main] c.e.l.service.impl.LessonServiceImpl     : Resource added: id=1 lessonId=1
+]]></system-out>
+  </testcase>
+  <testcase name="getResources_success" classname="com.edulearn.lesson.controller.LessonResourceIntegrationTest" time="0.034">
+    <system-out><![CDATA[2026-05-07T13:14:04.274+05:30 DEBUG 4044 --- [lesson-service] [           main] c.e.l.security.JwtAuthenticationFilter   : JWT authenticated: userId=20 role=STUDENT
+Hibernate: 
+    select
+        l1_0.lesson_id,
+        l1_0.content_type,
+        l1_0.content_url,
+        l1_0.course_id,
+        l1_0.created_at,
+        l1_0.description,
+        l1_0.duration_minutes,
+        l1_0.instructor_id,
+        l1_0.is_preview,
+        l1_0.order_index,
+        l1_0.title,
+        l1_0.updated_at 
+    from
+        lessons l1_0 
+    where
+        l1_0.lesson_id=?
+Hibernate: 
+    select
+        r1_0.resource_id,
+        r1_0.created_at,
+        r1_0.file_type,
+        r1_0.file_url,
+        r1_0.lesson_id,
+        r1_0.name,
+        r1_0.size_kb 
+    from
+        resources r1_0 
+    left join
+        lessons l1_0 
+            on l1_0.lesson_id=r1_0.lesson_id 
+    where
+        l1_0.lesson_id=?
+]]></system-out>
+  </testcase>
+  <testcase name="reorderLessons_adminSuccess" classname="com.edulearn.lesson.controller.LessonResourceIntegrationTest" time="0.068">
+    <system-out><![CDATA[2026-05-07T13:14:04.310+05:30 DEBUG 4044 --- [lesson-service] [           main] c.e.l.security.JwtAuthenticationFilter   : JWT authenticated: userId=1 role=ADMIN
+Hibernate: 
+    select
+        coalesce(max(l1_0.order_index), 0) 
+    from
+        lessons l1_0 
+    where
+        l1_0.course_id=?
+Hibernate: 
+    insert 
+    into
+        lessons
+        (content_type, content_url, course_id, created_at, description, duration_minutes, instructor_id, is_preview, order_index, title, updated_at, lesson_id) 
+    values
+        (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, default)
+2026-05-07T13:14:04.320+05:30  INFO 4044 --- [lesson-service] [           main] c.e.l.service.impl.LessonServiceImpl     : Lesson added: id=2 courseId=10 order=2
+Hibernate: 
+    select
+        coalesce(sum(l1_0.duration_minutes), 0) 
+    from
+        lessons l1_0 
+    where
+        l1_0.course_id=?
+2026-05-07T13:14:04.323+05:30 DEBUG 4044 --- [lesson-service] [           main] c.e.l.service.impl.LessonServiceImpl     : Notified course-service: courseId=10 totalMinutes=110
+2026-05-07T13:14:04.337+05:30 DEBUG 4044 --- [lesson-service] [           main] c.e.l.security.JwtAuthenticationFilter   : JWT authenticated: userId=1 role=ADMIN
+Hibernate: 
+    select
+        l1_0.lesson_id,
+        l1_0.content_type,
+        l1_0.content_url,
+        l1_0.course_id,
+        l1_0.created_at,
+        l1_0.description,
+        l1_0.duration_minutes,
+        l1_0.instructor_id,
+        l1_0.is_preview,
+        l1_0.order_index,
+        l1_0.title,
+        l1_0.updated_at 
+    from
+        lessons l1_0 
+    where
+        l1_0.course_id=? 
+    order by
+        l1_0.order_index
+2026-05-07T13:14:04.347+05:30  INFO 4044 --- [lesson-service] [           main] c.e.l.service.impl.LessonServiceImpl     : Lessons reordered for courseId=10
+Hibernate: 
+    update
+        lessons 
+    set
+        content_type=?,
+        content_url=?,
+        course_id=?,
+        description=?,
+        duration_minutes=?,
+        instructor_id=?,
+        is_preview=?,
+        order_index=?,
+        title=?,
+        updated_at=? 
+    where
+        lesson_id=?
+Hibernate: 
+    update
+        lessons 
+    set
+        content_type=?,
+        content_url=?,
+        course_id=?,
+        description=?,
+        duration_minutes=?,
+        instructor_id=?,
+        is_preview=?,
+        order_index=?,
+        title=?,
+        updated_at=? 
+    where
+        lesson_id=?
+Hibernate: 
+    select
+        l1_0.lesson_id,
+        l1_0.content_type,
+        l1_0.content_url,
+        l1_0.course_id,
+        l1_0.created_at,
+        l1_0.description,
+        l1_0.duration_minutes,
+        l1_0.instructor_id,
+        l1_0.is_preview,
+        l1_0.order_index,
+        l1_0.title,
+        l1_0.updated_at 
+    from
+        lessons l1_0 
+    where
+        l1_0.course_id=? 
+    order by
+        l1_0.order_index
+Hibernate: 
+    select
+        count(r1_0.resource_id) 
+    from
+        resources r1_0 
+    left join
+        lessons l1_0 
+            on l1_0.lesson_id=r1_0.lesson_id 
+    where
+        l1_0.lesson_id=?
+Hibernate: 
+    select
+        count(r1_0.resource_id) 
+    from
+        resources r1_0 
+    left join
+        lessons l1_0 
+            on l1_0.lesson_id=r1_0.lesson_id 
+    where
+        l1_0.lesson_id=?
+]]></system-out>
+  </testcase>
+  <testcase name="countLessons_internal" classname="com.edulearn.lesson.controller.LessonResourceIntegrationTest" time="0.015">
+    <system-out><![CDATA[Hibernate: 
+    select
+        count(l1_0.lesson_id) 
+    from
+        lessons l1_0 
+    where
+        l1_0.course_id=?
+]]></system-out>
+  </testcase>
+  <testcase name="removeResource_instructorSuccess" classname="com.edulearn.lesson.controller.LessonResourceIntegrationTest" time="0.053">
+    <system-out><![CDATA[2026-05-07T13:14:04.395+05:30 DEBUG 4044 --- [lesson-service] [           main] c.e.l.security.JwtAuthenticationFilter   : JWT authenticated: userId=5 role=INSTRUCTOR
+Hibernate: 
+    select
+        l1_0.lesson_id,
+        l1_0.content_type,
+        l1_0.content_url,
+        l1_0.course_id,
+        l1_0.created_at,
+        l1_0.description,
+        l1_0.duration_minutes,
+        l1_0.instructor_id,
+        l1_0.is_preview,
+        l1_0.order_index,
+        l1_0.title,
+        l1_0.updated_at 
+    from
+        lessons l1_0 
+    where
+        l1_0.lesson_id=?
+Hibernate: 
+    select
+        count(l1_0.lesson_id) 
+    from
+        lessons l1_0 
+    where
+        l1_0.course_id=?
+Hibernate: 
+    select
+        l1_0.lesson_id 
+    from
+        lessons l1_0 
+    where
+        l1_0.course_id=? 
+        and l1_0.instructor_id=? 
+    fetch
+        first ? rows only
+Hibernate: 
+    select
+        r1_0.resource_id,
+        r1_0.created_at,
+        r1_0.file_type,
+        r1_0.file_url,
+        r1_0.lesson_id,
+        r1_0.name,
+        r1_0.size_kb 
+    from
+        resources r1_0 
+    where
+        r1_0.resource_id=?
+2026-05-07T13:14:04.418+05:30  INFO 4044 --- [lesson-service] [           main] c.e.l.service.impl.LessonServiceImpl     : Resource deleted: id=1
+Hibernate: 
+    delete 
+    from
+        resources 
+    where
+        resource_id=?
+Hibernate: 
+    select
+        r1_0.resource_id,
+        r1_0.created_at,
+        r1_0.file_type,
+        r1_0.file_url,
+        r1_0.lesson_id,
+        r1_0.name,
+        r1_0.size_kb 
+    from
+        resources r1_0 
+    where
+        r1_0.resource_id=?
+]]></system-out>
+  </testcase>
+  <testcase name="deleteLesson_adminSuccess" classname="com.edulearn.lesson.controller.LessonResourceIntegrationTest" time="0.054">
+    <system-out><![CDATA[2026-05-07T13:14:04.452+05:30 DEBUG 4044 --- [lesson-service] [           main] c.e.l.security.JwtAuthenticationFilter   : JWT authenticated: userId=1 role=ADMIN
+Hibernate: 
+    select
+        l1_0.lesson_id,
+        l1_0.content_type,
+        l1_0.content_url,
+        l1_0.course_id,
+        l1_0.created_at,
+        l1_0.description,
+        l1_0.duration_minutes,
+        l1_0.instructor_id,
+        l1_0.is_preview,
+        l1_0.order_index,
+        l1_0.title,
+        l1_0.updated_at 
+    from
+        lessons l1_0 
+    where
+        l1_0.lesson_id=?
+Hibernate: 
+    select
+        r1_0.lesson_id,
+        r1_0.resource_id,
+        r1_0.created_at,
+        r1_0.file_type,
+        r1_0.file_url,
+        r1_0.name,
+        r1_0.size_kb 
+    from
+        resources r1_0 
+    where
+        r1_0.lesson_id=?
+Hibernate: 
+    delete 
+    from
+        lessons 
+    where
+        lesson_id=?
+Hibernate: 
+    update
+        lessons 
+    set
+        order_index=(order_index-1) 
+    where
+        course_id=? 
+        and order_index>?
+2026-05-07T13:14:04.482+05:30  INFO 4044 --- [lesson-service] [           main] c.e.l.service.impl.LessonServiceImpl     : Lesson deleted: id=1 courseId=10
+Hibernate: 
+    select
+        coalesce(sum(l1_0.duration_minutes), 0) 
+    from
+        lessons l1_0 
+    where
+        l1_0.course_id=?
+2026-05-07T13:14:04.483+05:30 DEBUG 4044 --- [lesson-service] [           main] c.e.l.service.impl.LessonServiceImpl     : Notified course-service: courseId=10 totalMinutes=20
+Hibernate: 
+    select
+        l1_0.lesson_id,
+        l1_0.content_type,
+        l1_0.content_url,
+        l1_0.course_id,
+        l1_0.created_at,
+        l1_0.description,
+        l1_0.duration_minutes,
+        l1_0.instructor_id,
+        l1_0.is_preview,
+        l1_0.order_index,
+        l1_0.title,
+        l1_0.updated_at 
+    from
+        lessons l1_0 
+    where
+        l1_0.lesson_id=?
+]]></system-out>
+  </testcase>
+</testsuite>

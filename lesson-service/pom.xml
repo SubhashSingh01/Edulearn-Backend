@@ -15,7 +15,7 @@
     <groupId>com.edulearn</groupId>
     <artifactId>lesson-service</artifactId>
     <version>1.0.0</version>
-    <n>lesson-service</n>
+    <name>lesson-service</name>
     <description>EduLearn LMS - Lesson and Content Management Service</description>
 
     <properties>

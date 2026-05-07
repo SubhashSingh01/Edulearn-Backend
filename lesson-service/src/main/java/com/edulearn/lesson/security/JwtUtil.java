@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 
 import java.security.Key;
 import java.util.Base64;
+import java.util.Date;
 
 @Component
 @Slf4j
@@ -15,6 +16,9 @@ public class JwtUtil {
 
     @Value("${app.jwt.secret}")
     private String jwtSecret;
+
+    @Value("${app.jwt.expiration-ms:86400000}")
+    private long jwtExpirationMs;
 
     private Key getSigningKey() {
         byte[] keyBytes = Base64.getDecoder().decode(jwtSecret);
@@ -43,16 +47,15 @@ public class JwtUtil {
         return (String) parseClaims(token).get("role");
     }
 
-    // Used by tests to generate tokens
     public String generateToken(Long userId, String email, String role) {
-        io.jsonwebtoken.Claims claims = Jwts.claims();
+        Claims claims = Jwts.claims();
         claims.put("userId", userId);
         claims.put("role", role);
         return Jwts.builder()
                 .setClaims(claims)
                 .setSubject(email)
-                .setIssuedAt(new java.util.Date())
-                .setExpiration(new java.util.Date(System.currentTimeMillis() + 3600000L))
+                .setIssuedAt(new Date())
+                .setExpiration(new Date(System.currentTimeMillis() + jwtExpirationMs))
                 .signWith(getSigningKey(), SignatureAlgorithm.HS256)
                 .compact();
     }
