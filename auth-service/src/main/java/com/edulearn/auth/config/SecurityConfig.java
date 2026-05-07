@@ -2,6 +2,7 @@ package com.edulearn.auth.config;
 
 import com.edulearn.auth.security.CustomOAuth2UserService;
 import com.edulearn.auth.security.JwtAuthenticationFilter;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -49,6 +50,7 @@ public class SecurityConfig {
                                 "/api/v1/auth/register",
                                 "/api/v1/auth/login",
                                 "/api/v1/auth/validate",
+                                "/api/v1/auth/refresh",
                                 "/api/v1/auth/oauth/**",
                                 "/oauth2/**",
                                 "/login/oauth2/**",
@@ -66,6 +68,16 @@ public class SecurityConfig {
                 .oauth2Login(oauth2 -> oauth2
                         .userInfoEndpoint(ui -> ui.userService(customOAuth2UserService))
                         .defaultSuccessUrl("/api/v1/auth/oauth/success", true)
+                )
+                .exceptionHandling(ex -> ex
+                        .authenticationEntryPoint((request, response, authException) -> {
+                            String accept = request.getHeader("Accept");
+                            if (accept != null && accept.contains("text/html")) {
+                                response.sendRedirect("/oauth2/authorization/google");
+                            } else {
+                                response.sendError(HttpServletResponse.SC_FORBIDDEN);
+                            }
+                        })
                 )
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 

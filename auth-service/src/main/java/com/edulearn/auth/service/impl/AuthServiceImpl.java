@@ -47,17 +47,17 @@ public class AuthServiceImpl implements AuthService {
                 .isActive(true)
                 .build();
 
-        userRepository.save(user);
-        log.info("Registered new user: {} with role: {}", user.getEmail(), user.getRole());
+        User savedUser = userRepository.save(user);
+        log.info("Registered new user: {} with role: {}", savedUser.getEmail(), savedUser.getRole());
 
-        String token = jwtUtil.generateToken(user.getUserId(), user.getEmail(),
-                user.getRole().name());
+        String token = jwtUtil.generateToken(savedUser.getUserId(), savedUser.getEmail(),
+                savedUser.getRole().name());
 
         return AuthDto.AuthResponse.builder()
                 .accessToken(token)
                 .tokenType("Bearer")
                 .expiresInMs(jwtUtil.getExpirationMs())
-                .user(toUserResponse(user))
+                .user(toUserResponse(savedUser))
                 .build();
     }
 
@@ -230,8 +230,8 @@ public class AuthServiceImpl implements AuthService {
     @Override
     @Transactional
     public AuthDto.AuthResponse handleOAuthLogin(String provider, String providerId,
-                                                  String email, String fullName,
-                                                  String profilePicUrl) {
+                                                 String email, String fullName,
+                                                 String profilePicUrl) {
         User user = userRepository.findByProviderAndProviderId(provider, providerId)
                 .or(() -> email != null ? userRepository.findByEmail(email) : java.util.Optional.empty())
                 .orElseGet(() -> {
@@ -247,7 +247,6 @@ public class AuthServiceImpl implements AuthService {
                     return userRepository.save(newUser);
                 });
 
-        // Update provider info in case user switched providers
         user.setProvider(provider);
         user.setProviderId(providerId);
         if (profilePicUrl != null) user.setProfilePicUrl(profilePicUrl);
