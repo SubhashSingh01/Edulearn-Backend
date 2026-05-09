@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.edulearn.progress.service.ProgressServiceImplTest
+-------------------------------------------------------------------------------
+Tests run: 17, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.443 s -- in com.edulearn.progress.service.ProgressServiceImplTest
