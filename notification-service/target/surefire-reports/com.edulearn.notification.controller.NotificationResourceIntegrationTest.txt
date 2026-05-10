@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.edulearn.notification.controller.NotificationResourceIntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 11, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 12.65 s -- in com.edulearn.notification.controller.NotificationResourceIntegrationTest
