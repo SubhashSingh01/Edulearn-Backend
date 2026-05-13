@@ -9,6 +9,7 @@ spring:
     gateway:
       # ── Global CORS ──────────────────────────────────────────────────────────
       globalcors:
+        add-to-simple-url-handler-mapping: true
         corsConfigurations:
           '[/**]':
             allowedOrigins:
@@ -113,11 +114,8 @@ app:
     - /api/v1/auth/refresh
     - /api/v1/auth/validate
     - /api/v1/auth/oauth/success
-    - /api/v1/courses
-    - /api/v1/courses/search
-    - /api/v1/courses/featured
-    - /api/v1/courses/top
-    - /api/v1/courses/free
+    - /api/v1/courses/**
+    - /api/v1/lessons/**
     - /api/v1/certificates/verify
     - /actuator/health
 

@@ -14,6 +14,11 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.client.RestTemplate;
+import com.razorpay.RazorpayClient;
+import com.razorpay.Order;
+import org.json.JSONObject;
+import javax.crypto.Mac;
+import javax.crypto.spec.SecretKeySpec;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -29,6 +34,8 @@ public class PaymentServiceImpl implements PaymentService {
     private final RestTemplate           restTemplate;
 
     @Value("${app.enrollment-service.url}") private String enrollmentServiceUrl;
+    @Value("${razorpay.key.id}")   private String razorpayKeyId;
+    @Value("${razorpay.key.secret}") private String razorpayKeySecret;
 
     // ── Process Payment ───────────────────────────────────────────────────────
 
@@ -63,6 +70,68 @@ public class PaymentServiceImpl implements PaymentService {
     public List<PaymentDto.PaymentResponse> getPaymentsByStudent(Long studentId) {
         return paymentRepository.findByStudentId(studentId)
                 .stream().map(this::toPaymentResponse).collect(Collectors.toList());
+    }
+
+    @Override
+    public java.util.Map<String, Object> createRazorpayOrder(Long courseId, java.math.BigDecimal amount) {
+        try {
+            RazorpayClient client = new RazorpayClient(razorpayKeyId, razorpayKeySecret);
+            JSONObject options = new JSONObject();
+            options.put("amount", amount.multiply(java.math.BigDecimal.valueOf(100)).intValue()); // paise
+            options.put("currency", "INR");
+            options.put("receipt", "order_" + courseId + "_" + System.currentTimeMillis());
+            Order order = client.orders.create(options);
+            return order.toJson().toMap();
+        } catch (Exception e) {
+            throw new RuntimeException("Failed to create Razorpay order: " + e.getMessage());
+        }
+    }
+
+    @Override
+    @Transactional
+    public PaymentDto.PaymentResponse verifyRazorpayPayment(Long studentId, java.util.Map<String, String> payload) {
+        try {
+            String paymentId = payload.get("razorpay_payment_id");
+            String orderId   = payload.get("razorpay_order_id");
+            String signature = payload.get("razorpay_signature");
+            Long   courseId  = Long.parseLong(payload.get("courseId"));
+
+            // Verify HMAC-SHA256 signature
+            String data     = orderId + "|" + paymentId;
+            Mac mac = Mac.getInstance("HmacSHA256");
+            mac.init(new SecretKeySpec(razorpayKeySecret.getBytes(), "HmacSHA256"));
+            byte[] hash = mac.doFinal(data.getBytes());
+            StringBuilder sb = new StringBuilder();
+            for (byte b : hash) sb.append(String.format("%02x", b));
+            String expected = sb.toString();
+
+            if (!expected.equals(signature)) {
+                throw new RuntimeException("Invalid payment signature — possible fraud attempt");
+            }
+
+            // Save verified payment
+            Payment payment = Payment.builder()
+                    .studentId(studentId)
+                    .courseId(courseId)
+                    .amount(new java.math.BigDecimal(payload.getOrDefault("amount", "0")))
+                    .mode(Payment.PaymentMode.UPI)
+                    .transactionId(paymentId)
+                    .currency("INR")
+                    .status(Payment.PaymentStatus.SUCCESS)
+                    .build();
+
+            Payment saved = paymentRepository.save(payment);
+            log.info("Razorpay payment verified: {} for student {} course {}", paymentId, studentId, courseId);
+
+            // Trigger enrollment
+            triggerEnrollment(studentId, courseId);
+
+            return toPaymentResponse(saved);
+        } catch (RuntimeException e) {
+            throw e;
+        } catch (Exception e) {
+            throw new RuntimeException("Payment verification failed: " + e.getMessage());
+        }
     }
 
     // ── Refund Payment ────────────────────────────────────────────────────────

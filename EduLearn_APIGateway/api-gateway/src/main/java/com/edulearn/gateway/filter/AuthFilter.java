@@ -98,12 +98,23 @@ public class AuthFilter extends AbstractGatewayFilterFactory<AuthFilter.Config> 
 
     private boolean isPublic(String path) {
         List<String> publicEndpoints = appProperties.getPublicEndpoints();
+
         if (publicEndpoints == null || publicEndpoints.isEmpty()) {
             return false;
         }
+
         return publicEndpoints.stream().anyMatch(ep -> {
-            // Exact match or prefix match (e.g. /api/v1/courses matches /api/v1/courses)
-            return path.equals(ep) || path.startsWith(ep + "/") || path.startsWith(ep + "?");
+
+            // Handle wildcard patterns like /api/v1/courses/**
+            if (ep.endsWith("/**")) {
+                String base = ep.substring(0, ep.length() - 3);
+                return path.startsWith(base);
+            }
+
+            // Exact or subpath match
+            return path.equals(ep)
+                    || path.startsWith(ep + "/")
+                    || path.startsWith(ep + "?");
         });
     }
 

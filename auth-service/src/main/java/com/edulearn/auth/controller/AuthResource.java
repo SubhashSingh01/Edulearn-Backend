@@ -181,32 +181,94 @@ public class AuthResource {
                 .message("User " + userId + " deactivated")
                 .build());
     }
+    @GetMapping("/admin/users")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<List<AuthDto.UserResponse>> getAllUsers() {
+
+        List<AuthDto.UserResponse> users = List.of(
+                        authService.getUsersByRole(User.Role.STUDENT),
+                        authService.getUsersByRole(User.Role.INSTRUCTOR),
+                        authService.getUsersByRole(User.Role.ADMIN)
+                ).stream()
+                .flatMap(List::stream)
+                .toList();
+
+        return ResponseEntity.ok(users);
+    }
+
+    @GetMapping("/admin/stats")
+    @PreAuthorize("hasRole('ADMIN')")
+    public ResponseEntity<Map<String, Object>> getAdminStats() {
+
+        List<AuthDto.UserResponse> students =
+                authService.getUsersByRole(User.Role.STUDENT);
+
+        List<AuthDto.UserResponse> instructors =
+                authService.getUsersByRole(User.Role.INSTRUCTOR);
+
+        List<AuthDto.UserResponse> admins =
+                authService.getUsersByRole(User.Role.ADMIN);
+
+        Map<String, Object> stats = Map.of(
+                "totalUsers", students.size() + instructors.size() + admins.size(),
+                "students", students.size(),
+                "instructors", instructors.size()
+        );
+
+        return ResponseEntity.ok(stats);
+    }
 
     // ── GET /api/v1/auth/oauth/success ────────────────────────────────────────
     // Called by Spring Security after a successful OAuth2 login redirect
 
     @GetMapping("/oauth/success")
-    @Operation(summary = "OAuth2 success callback — returns a JWT after provider login")
-    public ResponseEntity<AuthDto.AuthResponse> oauthSuccess(Authentication authentication) {
+    @Operation(summary = "OAuth2 success callback — redirects to frontend with JWT")
+    public void oauthSuccess(
+            Authentication authentication,
+            jakarta.servlet.http.HttpServletResponse response
+    ) throws java.io.IOException {
+
         if (!(authentication instanceof OAuth2AuthenticationToken oauthToken)) {
             throw new IllegalStateException("OAuth2 authentication is required");
         }
 
         OAuth2User principal = oauthToken.getPrincipal();
         Map<String, Object> attributes = principal.getAttributes();
+
         String provider = oauthToken.getAuthorizedClientRegistrationId();
         String providerId = extractProviderId(attributes);
-        String email = (String) attributes.get("email");
-        String fullName = firstNonBlank((String) attributes.get("name"), (String) attributes.get("login"));
-        String pictureUrl = firstNonBlank((String) attributes.get("picture"), (String) attributes.get("avatar_url"));
 
-        return ResponseEntity.ok(authService.handleOAuthLogin(
+        String email = (String) attributes.get("email");
+
+        String fullName = firstNonBlank(
+                (String) attributes.get("name"),
+                (String) attributes.get("login")
+        );
+
+        String pictureUrl = firstNonBlank(
+                (String) attributes.get("picture"),
+                (String) attributes.get("avatar_url")
+        );
+
+        AuthDto.AuthResponse authResponse = authService.handleOAuthLogin(
                 provider,
                 providerId,
                 email,
                 fullName,
                 pictureUrl
-        ));
+        );
+
+        String redirectUrl =
+                "http://localhost:4200/auth-callback" +
+                        "?token=" + authResponse.getAccessToken() +
+                        "&id=" + authResponse.getUser().getUserId() +
+                        "&name=" + java.net.URLEncoder.encode(
+                        authResponse.getUser().getFullName(),
+                        java.nio.charset.StandardCharsets.UTF_8
+                ) +
+                        "&role=" + authResponse.getUser().getRole();
+
+        response.sendRedirect(redirectUrl);
     }
 
     // ── Helpers ───────────────────────────────────────────────────────────────

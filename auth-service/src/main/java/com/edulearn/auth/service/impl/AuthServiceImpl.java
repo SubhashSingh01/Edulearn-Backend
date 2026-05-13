@@ -211,6 +211,7 @@ public class AuthServiceImpl implements AuthService {
     public List<AuthDto.UserResponse> getUsersByRole(User.Role role) {
         return userRepository.findAllByRole(role)
                 .stream()
+                .filter(User::getIsActive)
                 .map(this::toUserResponse)
                 .collect(Collectors.toList());
     }

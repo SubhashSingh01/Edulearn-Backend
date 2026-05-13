@@ -34,6 +34,28 @@ public class PaymentResource {
                 .body(paymentService.processPayment(studentId, request));
     }
 
+    // POST /api/v1/payments/razorpay/order
+    @PostMapping("/razorpay/order")
+    @PreAuthorize("hasRole('STUDENT') or hasRole('ADMIN')")
+    @Operation(summary = "Create a Razorpay order for course purchase")
+    public ResponseEntity<java.util.Map<String, Object>> createRazorpayOrder(
+            @RequestBody java.util.Map<String, Object> body) {
+        Long courseId = Long.parseLong(body.get("courseId").toString());
+        java.math.BigDecimal amount = new java.math.BigDecimal(body.get("amount").toString());
+        return ResponseEntity.ok(paymentService.createRazorpayOrder(courseId, amount));
+    }
+
+    // POST /api/v1/payments/razorpay/verify
+    @PostMapping("/razorpay/verify")
+    @PreAuthorize("hasRole('STUDENT') or hasRole('ADMIN')")
+    @Operation(summary = "Verify Razorpay payment signature and enroll student")
+    public ResponseEntity<PaymentDto.PaymentResponse> verifyRazorpayPayment(
+            @RequestBody java.util.Map<String, String> payload,
+            HttpServletRequest httpRequest) {
+        Long studentId = (Long) httpRequest.getAttribute("userId");
+        return ResponseEntity.ok(paymentService.verifyRazorpayPayment(studentId, payload));
+    }
+
     // GET /api/v1/payments/my — student's own payment history
     @GetMapping("/my")
     @PreAuthorize("isAuthenticated()")
